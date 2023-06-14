@@ -1,0 +1,78 @@
+{
+	"users": [
+		{
+			"id": 1,
+			"name": "John"
+		},
+		{
+			"id": 2,
+			"name": "Alice"
+		},
+		{
+			"id": 3,
+			"name": "Bob"
+		}
+	],
+	"messages": [
+		{
+			"id": 1,
+			"senderId": 1,
+			"receiverId": 2,
+			"message": "Hey Alice, how are you?"
+		},
+		{
+			"id": 2,
+			"senderId": 2,
+			"receiverId": 1,
+			"message": "Hi John! I'm doing great, thanks. How about you?"
+		},
+		{
+			"id": 3,
+			"senderId": 1,
+			"receiverId": 2,
+			"message": "I'm good too. Just working on a project."
+		},
+		{
+			"id": 4,
+			"senderId": 3,
+			"receiverId": 1,
+			"message": "Hey John, long time no see. How have you been?"
+		},
+		{
+			"id": 5,
+			"senderId": 1,
+			"receiverId": 3,
+			"message": "Hey Bob! Yeah, it's been a while. I've been busy with work, but doing well."
+		},
+		{
+			"id": 6,
+			"senderId": 2,
+			"receiverId": 1,
+			"message": "That's good to hear. Any exciting projects you're working on?"
+		},
+		{
+			"id": 7,
+			"senderId": 1,
+			"receiverId": 2,
+			"message": "Yeah, actually. I'm working on a new chat application. It's been quite challenging but fun."
+		},
+		{
+			"id": 8,
+			"senderId": 3,
+			"receiverId": 1,
+			"message": "Sounds interesting. Let me know if you need any help with testing or feedback."
+		},
+		{
+			"id": 9,
+			"senderId": 1,
+			"receiverId": 3,
+			"message": "Thanks, Bob! I'll definitely keep that in mind. Your feedback would be valuable."
+		},
+		{
+			"id": 10,
+			"senderId": 2,
+			"receiverId": 1,
+			"message": "John, I have a quick question. Do you know the date for the next team meeting?"
+		}
+	]
+}

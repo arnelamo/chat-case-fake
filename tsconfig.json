@@ -10,6 +10,7 @@
 		"sourceMap": true,
 		"strict": true,
 		"moduleResolution": "NodeNext",
-		"outDir": ".svelte-kit"
+		"outDir": ".svelte-kit",
+		"allowImportingTsExtensions": true
 	}
 }
