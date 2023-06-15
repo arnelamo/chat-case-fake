@@ -14,8 +14,6 @@ export const GET = async () => {
 			];
 		}, [] as Data[]);
 
-		console.log(data);
-
 		const blob = new Blob([JSON.stringify(data, null, 2)], {
 			type: 'application/json'
 		});
