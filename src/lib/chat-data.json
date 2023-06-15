@@ -74,5 +74,27 @@
 			"receiverId": 1,
 			"message": "John, I have a quick question. Do you know the date for the next team meeting?"
 		}
+	],
+	"answers": [
+		{
+			"senderId": 3,
+			"receiverId": 2,
+			"message": "That's very interesting. Really."
+		},
+		{
+			"senderId": 3,
+			"receiverId": 1,
+			"message": "That is such a smart thing to say."
+		},
+		{
+			"senderId": 2,
+			"receiverId": 3,
+			"message": "I'm lost for words."
+		},
+		{
+			"senderId": 2,
+			"receiverId": 1,
+			"message": "Please continue, I'm all ears."
+		}
 	]
 }

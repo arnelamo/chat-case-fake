@@ -4,6 +4,14 @@
 
 	let chatLog = [] as Data[];
 	let input = '';
+	let answer: Data;
+	let allMessages: Data[];
+
+	$: if (answer) {
+		allMessages = [...chatLog, answer];
+	} else {
+		allMessages = chatLog;
+	}
 
 	onMount(async () => {
 		const response = await fetch('/api/log', {
@@ -39,6 +47,18 @@
 		}
 
 		input = '';
+		getResponse();
+	};
+
+	const getResponse = async () => {
+		const response = await fetch('/api/answer', {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		});
+
+		answer = await response.json();
 	};
 
 	const getNameTag = (name: string | undefined) => {
@@ -63,7 +83,7 @@
 		<h2 class="text-3xl font-semibold">Superchat</h2>
 		<div class="bg-gray-50 rounded-2xl mt-8 p-8">
 			<div use:scrollToBottom={chatLog} class="flex flex-col space-y-4 h-[48rem] overflow-y-auto">
-				{#each chatLog as { name, message, senderId }, index}
+				{#each allMessages as { name, message, senderId }, index}
 					{@const myUser = senderId === 1}
 					<article
 						aria-posinset={index + 1}
