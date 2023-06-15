@@ -45,19 +45,32 @@
 		if (!name) return '?';
 		return name.charAt(0).toLocaleUpperCase();
 	};
+
+	const scrollToBottom = (node) => {
+		const scroll = () =>
+			node.scroll({
+				top: node.scrollHeight,
+				behavior: 'smooth'
+			});
+		scroll();
+
+		return { update: scroll };
+	};
 </script>
 
 <main>
 	<section>
 		<h2 class="text-3xl font-semibold">Superchat</h2>
 		<div class="bg-gray-50 rounded-2xl mt-8 p-8">
-			<div class="flex-col space-y-4">
+			<div use:scrollToBottom={chatLog} class="flex flex-col space-y-4 h-[48rem] overflow-y-auto">
 				{#each chatLog as { name, message, senderId }, index}
 					{@const myUser = senderId === 1}
 					<article
 						aria-posinset={index + 1}
 						aria-setsize={chatLog.length}
-						class={`flex items-center ${myUser ? 'justify-end' : 'justify-start'}`}
+						class={`flex items-center ${myUser ? 'justify-end' : 'justify-start'} ${
+							index === 0 ? 'mt-auto' : ''
+						}`}
 					>
 						<span
 							class={`flex items-center justify-center h-10 w-10 rounded-full bg-indigo-200 flex-shrink-0 `}
@@ -65,8 +78,8 @@
 						>
 						<p
 							class={`${
-								myUser ? 'order-first mr-2' : 'order-last ml-2'
-							} bg-white p-4 rounded-md shadow-sm`}
+								myUser ? 'order-first mr-2 bg-indigo-500 text-white' : 'order-last ml-2 bg-white'
+							} px-4 py-2 rounded-md shadow-sm`}
 						>
 							{message}
 						</p>
